@@ -12,8 +12,8 @@ public class Main{
   // 0 for noPlay, 1 for ladder, 2 for snake
   while(position < 100){
 
-   possiblity = (Math.Random()*10)%3;
-   diceRoll = 1 + (int)(Math.Random()*10)%6;
+   possiblity = (int)(Math.floor(Math.Random()*10))%3;
+   diceRoll = 1 + (int)(Math.floor(Math.Random()*10))%6;
    noPlay = 0;
    ladder = diceRoll;
    snake = diceRoll;

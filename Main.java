@@ -35,7 +35,6 @@ public class Main{
 
   System.out.println("current position : "+ position); 
   }
-  System.out.println("you won!! your position is "+ position);
-
+   System.out.println("you won!! your position is && dice count: "+  position+" "+diceCount);
  }
 } 

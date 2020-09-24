@@ -4,8 +4,8 @@ public class Main{
 
   int position = 0;
   // 0 for noPlay, 1 for ladder, 2 for snake or options
-  int possiblity = (Math.Random()*10)%3;
-  int diceRoll = 1 + (int)(Math.Random()*10)%6;
+  int possiblity = (int)(Math.floor(Math.random()*10))%3;
+  int diceRoll = 1 + (int)(Math.floor(Math.random()*10))%6;
   int noPlay = 0;
   int ladder = diceRoll;
   int snake = diceRoll;

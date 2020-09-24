@@ -21,8 +21,11 @@ public class Main{
   
   if(possiblity == 0) 
       postion = position;
-  else if(possiblity == 1)
+  else if(possiblity == 1){
       position = position+ladder;
+      if(position > 100)// position should exactly be 100 
+         position = position - ladder;
+   }
   else{
       position = position - snake;
       if(position < 0)// if position is negative 

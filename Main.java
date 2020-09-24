@@ -2,39 +2,86 @@ public class Main{
 
  public static void main(String args[]){
 
-  int position = 0;
+  int player1Position = 0;
+  int player2Position = 0;
   int winningPosition = 100;
-  int possiblity = 0;
-  int diceRoll = 0;
+  int possiblityPlayer1 = 0;
+  int possiblityPlayer2 = 0;
+  int diceRollPlayer1 = 0;
+  int diceRollPlayer2 = 0;
   int noPlay = 0;
   int ladder = 0;
   int snake = 0;
   int diceCount = 0;
   // 0 for noPlay, 1 for ladder, 2 for snake
-  while(position < 100){
+  while(player1Position < 100 &&  player2Position < 100){
    diceCount++;//counting dice
-   possiblity = (Math.Random()*10)%3;
-   diceRoll = 1 + (int)(Math.Random()*10)%6;
+   
+  
+  // for player 1
+  
+ // player 1 rolled the dice
+   diceRollPlayer1 = 1 + (int)(Math.floor(Math.random()*10))%6;
+   possiblityPlayer1 = (int)(Math.floor(Math.random()*10))%3;
+  
    noPlay = 0;
-   ladder = diceRoll;
-   snake = diceRoll;
+   ladder = diceRollPlayer1;
+   snake = diceRollPlayer1;
   
-  
-  if(possiblity == 0) 
-      postion = position;
-  else if(possiblity == 1){
-      position = position+ladder;
-      if(position > 100)// position should exactly be 100 
-         position = position - ladder;
+
+  if(possiblityPlayer1 == 0) 
+      player1Position = player1Position;
+  else if(possiblityPlayer1 == 1){
+      
+      player1Position = player1Position + ladder;
+      if(player1Position > 100)// position should exactly be 100 
+         player1Position = player1Position - ladder;
+       else if (player1Position == 100){// player 1 winner
+        System.out.println("Player 1 won the game");
+        return;
+       }
    }
   else{
-      position = position - snake;
-      if(position < 0)// if position is negative 
-        position = 0;
+      player1Position = player1Position - snake;
+      if(player1Position < 0)// if position is negative 
+        player1Position = 0;
       }
 
-  System.out.println("current position : "+ position); 
+  
+
+  
+  // for player 2
+  
+ // player 2 rolled the dice
+   diceRollPlayer2 = 1 + (int)(Math.floor(Math.random()*10))%6;
+   possiblityPlayer2 = (int)(Math.floor(Math.random()*10))%3;
+  
+   noPlay = 0;
+   ladder = diceRollPlayer2;
+   snake = diceRollPlayer2;
+  
+
+  if(possiblityPlayer2 == 0) 
+      player2Position = player2Position;
+  else if(possiblityPlayer2 == 1){
+      
+      player2Position = player2Position + ladder;
+      if(player2Position > 100)// position should exactly be 100 
+         player2Position = player1Position - ladder;
+       else if (player2Position == 100){// player 2 winner
+        System.out.println("Player 2 won the game");
+        return;
+       }
+   }
+  else{
+      player2Position = player2Position - snake;
+      if(player2Position < 0)// if position is negative 
+        player2Position = 0;
+      }
+
+
+
   }
-   System.out.println("you won!! your position is && dice count: "+  position+" "+diceCount);
+   System.out.println("dice count: "+diceCount);
  }
 } 

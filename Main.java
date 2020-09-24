@@ -9,9 +9,10 @@ public class Main{
   int noPlay = 0;
   int ladder = 0;
   int snake = 0;
+  int diceCount = 0;
   // 0 for noPlay, 1 for ladder, 2 for snake
   while(position < 100){
-
+   diceCount++;//counting dice
    possiblity = (Math.Random()*10)%3;
    diceRoll = 1 + (int)(Math.Random()*10)%6;
    noPlay = 0;

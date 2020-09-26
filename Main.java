@@ -28,6 +28,7 @@ public class Main{
    ladder = diceRollPlayer1;
    snake = diceRollPlayer1;
   
+   System.out.println("Player 1 position: "+ player1Position);
 
   if(possiblityPlayer1 == 0) 
       player1Position = player1Position;
@@ -38,6 +39,7 @@ public class Main{
          player1Position = player1Position - ladder;
        else if (player1Position == 100){// player 1 winner
         System.out.println("Player 1 won the game");
+        System.out.println("dice count: "+diceCount);
         return;
        }
    }
@@ -60,20 +62,25 @@ public class Main{
    ladder = diceRollPlayer2;
    snake = diceRollPlayer2;
   
-
-  if(possiblityPlayer2 == 0) 
+   
+   System.out.println("Player 2 position: "+ player2Position);
+  
+   if(possiblityPlayer2 == 0) 
       player2Position = player2Position;
-  else if(possiblityPlayer2 == 1){
+  
+   else if(possiblityPlayer2 == 1){
       
       player2Position = player2Position + ladder;
       if(player2Position > 100)// position should exactly be 100 
          player2Position = player1Position - ladder;
        else if (player2Position == 100){// player 2 winner
         System.out.println("Player 2 won the game");
+        System.out.println("dice count: "+diceCount);
         return;
        }
    }
-  else{
+  
+   else{
       player2Position = player2Position - snake;
       if(player2Position < 0)// if position is negative 
         player2Position = 0;
@@ -82,6 +89,6 @@ public class Main{
 
 
   }
-   System.out.println("dice count: "+diceCount);
+   
  }
 } 
